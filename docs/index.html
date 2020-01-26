@@ -24,16 +24,16 @@
                 </tr>
                 <tr id="getInput">
                     <td>入力</td>
-                    <td><input name="eiki" value="26" type="number" oninput="generate()"></td>
-                    <td><input name="kiryoku" value="50" type="number" oninput="generate()"></td>
-                    <td><input name="mougeki" type="number" oninput="generate()"></td>
-                    <td><input name="yumou" type="number" oninput="generate()"></td>
-                    <td><input name="kensyu" type="number" oninput="generate()"></td>
-                    <td><input name="syubi" type="number" oninput="generate()"></td>
-                    <td><input name="syunbin" type="number" oninput="generate()"></td>
-                    <td><input name="seimitsu"type="number" oninput="generate()"></td>
-                    <td><input name="kyozetsu"type="number" oninput="generate()"></td>
-                    <td><input name="zokusei" type="number" oninput="generate()"></td>
+                    <td><input name="eiki" value="26" type="number" oninput="calc()"></td>
+                    <td><input name="kiryoku" value="50" type="number" oninput="calc()"></td>
+                    <td><input name="mougeki" type="number" oninput="calc()"></td>
+                    <td><input name="yumou" type="number" oninput="calc()"></td>
+                    <td><input name="kensyu" type="number" oninput="calc()"></td>
+                    <td><input name="syubi" type="number" oninput="calc()"></td>
+                    <td><input name="syunbin" type="number" oninput="calc()"></td>
+                    <td><input name="seimitsu" type="number" oninput="calc()"></td>
+                    <td><input name="kyozetsu" type="number" oninput="calc()"></td>
+                    <td><input name="zokusei" type="number" oninput="calc()"></td>
                     <td><input name="kaisu" type="number" oninput="setValue( '#kaisu' , this.value)"></td>
                 </tr>
                 <tr id="setInput">
@@ -53,51 +53,53 @@
             </tbody>
         </table>
 
-        <select name="main">
-            <option>メイン1</option>
-            <option value="eiki">英気</option>
-            <option value="kiryoku">気力</option>
-            <option value="mougeki">猛撃</option>
-            <option value="yumou">勇猛</option>
-            <option value="kensyu">堅守</option>
-            <option value="syubi">守備</option>
-            <option value="syunbin">俊敏</option>
-            <option value="seimitsu">精密</option>
-            <option value="kyozetsu">拒絶</option>
-            <option value="zokusei">属性</option>
-        </select>
-        
-        <select name="sub1">
-            <option>サブ1</option>
-            <option value="eiki">英気</option>
-            <option value="kiryoku">気力</option>
-            <option value="mougeki">猛撃</option>
-            <option value="yumou">勇猛</option>
-            <option value="kensyu">堅守</option>
-            <option value="syubi">守備</option>
-            <option value="syunbin">俊敏</option>
-            <option value="seimitsu">精密</option>
-            <option value="kyozetsu">拒絶</option>
-            <option value="zokusei">属性</option>
-        </select>
-        
-        <select name="sub2">
-            <option>サブ2</option>
-            <option value="eiki">英気</option>
-            <option value="kiryoku">気力</option>
-            <option value="mougeki">猛撃</option>
-            <option value="yumou">勇猛</option>
-            <option value="kensyu">堅守</option>
-            <option value="syubi">守備</option>
-            <option value="syunbin">俊敏</option>
-            <option value="seimitsu">精密</option>
-            <option value="kyozetsu">拒絶</option>
-            <option value="zokusei">属性</option>
-        </select>
+        <div class="select">
+            <select name="main">
+                <option></option>
+                <option value="eiki">英気</option>
+                <option value="kiryoku">気力</option>
+                <option value="mougeki">猛撃</option>
+                <option value="yumou">勇猛</option>
+                <option value="kensyu">堅守</option>
+                <option value="syubi">守備</option>
+                <option value="syunbin">俊敏</option>
+                <option value="seimitsu">精密</option>
+                <option value="kyozetsu">拒絶</option>
+                <option value="zokusei">属性</option>
+            </select>
+            
+            <select name="sub1">
+                <option value=""></option>
+                <option value="eiki">英気</option>
+                <option value="kiryoku">気力</option>
+                <option value="mougeki">猛撃</option>
+                <option value="yumou">勇猛</option>
+                <option value="kensyu">堅守</option>
+                <option value="syubi">守備</option>
+                <option value="syunbin">俊敏</option>
+                <option value="seimitsu">精密</option>
+                <option value="kyozetsu">拒絶</option>
+                <option value="zokusei">属性</option>
+            </select>
+            
+            <select name="sub2">
+                <option></option>
+                <option value="eiki">英気</option>
+                <option value="kiryoku">気力</option>
+                <option value="mougeki">猛撃</option>
+                <option value="yumou">勇猛</option>
+                <option value="kensyu">堅守</option>
+                <option value="syubi">守備</option>
+                <option value="syunbin">俊敏</option>
+                <option value="seimitsu">精密</option>
+                <option value="kyozetsu">拒絶</option>
+                <option value="zokusei">属性</option>
+            </select>
 
-        <input type="button" value="生成">
+            <input type="button" value="生成" onclick="generate()">
+        </div>
         
-        <table>
+        <table id="generateResult">
             <tbody>
                 <tr>
                     <td>俊敏</td>
