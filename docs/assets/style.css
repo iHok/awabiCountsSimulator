@@ -1,3 +1,12 @@
+table{
+    max-width:100%;
+}
+
 input[value^="-"]{
     background-color: red;
+}
+
+input{
+    min-width: 2rem;
+    max-width: 3rem;
 }
