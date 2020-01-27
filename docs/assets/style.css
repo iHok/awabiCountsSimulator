@@ -8,10 +8,18 @@ input[value^="-"]{
 
 input{
     min-width: 2rem;
-    max-width: 3rem;
+    max-width: 2.5rem;
 }
 
 #generateHead th,#generateResult td{
     min-width: 3rem;
     max-width: 3rem;
+}
+
+h1{
+    font-size: 1.4rem;
+}
+
+h2{
+    font-size: 1.2rem;
 }

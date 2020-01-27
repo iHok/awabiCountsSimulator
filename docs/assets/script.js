@@ -17,7 +17,7 @@ let calc = () =>{
         goukei = Number(goukei) + Number(e.value);
         mainGenerate = document.querySelectorAll(".main." + e.name).length;
         subGenerate = document.querySelectorAll(".sub." + e.name).length / 2;
-        goukeiZansu = Number(goukeiZansu) + Number(dividedBy50(round25(e.value))-mainGenerate-subGenerate)
+        goukeiZansu = Number(goukeiZansu) + Math.floor(Number(dividedBy50(round25(e.value))-mainGenerate-subGenerate))
         setValue( '#'+e.name , Number(dividedBy50(round25(e.value)) - Number(mainGenerate) - Number(subGenerate)))
     })
     setValue('#合計', goukei);
@@ -37,6 +37,9 @@ let generate = () => {
     </tr>
     `;
     tableGenerate.insertAdjacentHTML('beforeend', trGenerate); 
+    getSelect[0].selectedIndex=0;
+    getSelect[1].selectedIndex=0;
+    getSelect[2].selectedIndex=0;
 }
 
 calc();

@@ -2,14 +2,25 @@
 <html dir="ltr" lang="ja">
     <head>
         <title>awabiCountsSimulator</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156999886-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-156999886-1');
+        </script>
+
         <link rel="stylesheet" type="text/css" href="assets/style.css">
         <script src="assets/script.js" defer></script>
     </head>
     <body>
+        <h1>アワビ回数シミュレータ</h1>
         <table>
             <tbody>
                 <tr>
-                    <th>宝珠</th>
+                    <th>法珠</th>
                     <th>英気</th>
                     <th>気力</th>
                     <th>猛撃</th>
@@ -24,22 +35,22 @@
                     <th>合計</th>
                 </tr>
                 <tr id="getInput">
-                    <td>入力</td>
-                    <td><input name="英気" type="number" oninput="calc()"></td>
-                    <td><input name="気力" type="number" oninput="calc()"></td>
-                    <td><input name="猛撃" type="number" oninput="calc()"></td>
-                    <td><input name="勇猛" type="number" oninput="calc()"></td>
-                    <td><input name="堅守" type="number" oninput="calc()"></td>
-                    <td><input name="守備" type="number" oninput="calc()"></td>
-                    <td><input name="俊敏" type="number" oninput="calc()"></td>
-                    <td><input name="精密" type="number" oninput="calc()"></td>
-                    <td><input name="拒絶" type="number" oninput="calc()"></td>
-                    <td><input name="属性" type="number" oninput="calc()"></td>
-                    <td><input name="回数" type="number" oninput="calc()"></td>
+                    <td>欠片</td>
+                    <td><input name="英気" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="気力" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="猛撃" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="勇猛" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="堅守" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="守備" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="俊敏" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="精密" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="拒絶" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="属性" type="number" min="0" oninput="calc()"></td>
+                    <td><input name="回数" type="number" min="0" oninput="calc()"></td>
                     <td><input name="合計" id="合計" readonly></td>
                 </tr>
                 <tr id="setInput">
-                    <td>残数</td>
+                    <td>事後</td>
                     <td><input id="英気" readonly></td>
                     <td><input id="気力" readonly></td>
                     <td><input id="猛撃" readonly></td>
@@ -55,7 +66,12 @@
                 </tr>
             </tbody>
         </table>
+        <ul>
+            <li>事後の合計は、各回数の値の小数点切り捨ての合計値です。（例:3.5+2.5 → 3+2=5）</li>
+            <li>入力値、生成結果は<strong>保存されません。</strong></li>
+        </ul>
 
+        <h2>生成してみる</h2>
         <div class="select">
             メイン
             <select name="main">
@@ -101,18 +117,19 @@
 
             <input type="button" value="生成" onclick="generate();calc();">
         </div>
-        
-        <table id="generateRHead">
+
+        <h2>生成結果</h2>
+        <table id="generateHead">
                 <tr>
                     <th>メイン</th>
                     <th>サブ1</th>
-                    <th>サブ2</td>
+                    <th>サブ2</th>
                     <th></th>
                 </tr>
         </table>
         
         <table id="generateResult">
-       </table>
+        </table>
 
     </body>
 </html>
