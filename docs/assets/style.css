@@ -10,3 +10,8 @@ input{
     min-width: 2rem;
     max-width: 3rem;
 }
+
+#generateHead th,#generateResult td{
+    min-width: 3rem;
+    max-width: 3rem;
+}
