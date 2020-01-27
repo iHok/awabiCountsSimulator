@@ -22,7 +22,7 @@ let calc = () =>{
     })
     setValue('#合計', goukei);
     setValue('#回数', Number(kaisu) + Number(houjuGenerate.length));
-    setValue('#合計残数', goukeiZansu);
+    setValue('#合計残数', 0 <= goukeiZansu ? goukeiZansu : '-');
 }
 
 let generate = () => {

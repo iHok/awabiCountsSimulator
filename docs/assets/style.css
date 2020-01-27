@@ -1,3 +1,12 @@
+body {
+    background-image: url(kai_awabi.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color:rgba(255,255,255,0.4);
+    background-blend-mode:lighten;
+}
+
 table{
     max-width:100%;
 }
@@ -11,9 +20,25 @@ input{
     max-width: 2.5rem;
 }
 
+ul{
+    font-size: 0.75rem;
+}
+
+#generateResult tr:hover{
+  opacity: 0.75;
+}
 #generateHead th,#generateResult td{
-    min-width: 3rem;
-    max-width: 3rem;
+    min-width: 5.8rem;
+    max-width: 5.8rem;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow:
+    1px 1px 0 #FFF, -1px -1px 0 #FFF,
+    -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+    0px 1px 0 #FFF,  0-1px 0 #FFF,
+    -1px 0 0 #FFF, 1px 0 0 #FFF;
 }
 
 h1{
@@ -23,3 +48,14 @@ h1{
 h2{
     font-size: 1.2rem;
 }
+
+.英気{background-color: #198211;}
+.気力{background-color: #9ce33f;}
+.猛撃{background-color: #d42f2c;}
+.勇猛{background-color: #ff6a65;}
+.堅守{background-color: #101380;}
+.守備{background-color: #0835e8;}
+.俊敏{background-color: #0daec2;}
+.精密{background-color: #ef5ede;}
+.拒絶{background-color: #dd51fd;}
+.属性{background-color: #bdbdbd;}
