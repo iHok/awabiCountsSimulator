@@ -1,9 +1,5 @@
 body {
-    background-image: url(kai_awabi.png);
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color:rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.4) url(kai_awabi.png) no-repeat 85% 95%  fixed;
     background-blend-mode:lighten;
 }
 
@@ -25,7 +21,13 @@ ul{
 }
 
 #generateResult tr:hover{
-  opacity: 0.75;
+  opacity: 0.85;
+}
+#generateResult td:hover{
+    opacity: 0.7;
+}
+#generateResult button{
+    width: 100%;
 }
 #generateHead th,#generateResult td{
     min-width: 5.8rem;
@@ -41,12 +43,30 @@ ul{
     -1px 0 0 #FFF, 1px 0 0 #FFF;
 }
 
+#generateResult div{
+    position: relative;
+}
+#generateResult select{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left:0;
+}
+#generateResult select:hover{
+    cursor: pointer;
+}
 h1{
     font-size: 1.4rem;
+    margin-bottom: 0.4rem;
 }
 
 h2{
     font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.generateResultGuide{
+    position: absolute;
 }
 
 .英気{background-color: #198211;}
@@ -56,6 +76,6 @@ h2{
 .堅守{background-color: #101380;}
 .守備{background-color: #0835e8;}
 .俊敏{background-color: #0daec2;}
-.精密{background-color: #ef5ede;}
-.拒絶{background-color: #dd51fd;}
+.精密{background-color: #ff7ef0;}
+.拒絶{background-color: #d61eff;}
 .属性{background-color: #bdbdbd;}

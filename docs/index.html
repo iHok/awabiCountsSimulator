@@ -16,7 +16,7 @@
         <script src="assets/script.js" defer></script>
     </head>
     <body>
-        <h1>アワビ回数シミュレータ@マジカミ</h1>
+        <h1>アワビ残回数シミュレータ@マジカミ</h1>
         <table>
             <tbody>
                 <tr>
@@ -68,14 +68,15 @@
         </table>
         <ul>
             <li>事後の合計は、各回数の値の小数点切り捨ての合計値です。(例:3.5+2.5 → 3+2=5)</li>
+            <li>生成結果の枠をクリックで、法珠の種類の変更が可能です。</li>
             <li>入力値、生成結果は<strong>保存されません。</strong></li>
             <li>バグ報告、要望、その他問い合わせなどありましたら<a href="https://github.com/iHok/awabiCountsSimulator">github</a>か<a href="https://twitter.com/iHokYa">twitter</a>からどうぞ。</li>
         </ul>
 
         <h2>生成する</h2>
-        <div class="select">
+        <form class="select" onsubmit="generate();calc();return false;">
             メイン
-            <select name="main">
+            <select name="main" required>
                 <option></option>
                 <option>英気</option>
                 <option>気力</option>
@@ -89,7 +90,7 @@
             </select>
             サブ1
             <select name="sub1">
-                <option></option>
+                <option>　</option>
                 <option>英気</option>
                 <option>気力</option>
                 <option>猛撃</option>
@@ -103,7 +104,7 @@
             </select>
             サブ2
             <select name="sub2">
-                <option></option>
+                <option>　</option>
                 <option>英気</option>
                 <option>気力</option>
                 <option>猛撃</option>
@@ -116,8 +117,8 @@
                 <option>属性</option>
             </select>
 
-            <input type="button" value="生成" onclick="generate();calc();">
-        </div>
+            <button type="submit">生成</button>
+        </form>
 
         <h2>生成結果</h2>
         <table id="generateHead">

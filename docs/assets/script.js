@@ -30,10 +30,59 @@ let generate = () => {
     let getSelect = document.querySelectorAll(".select select");
     const trGenerate = `
     <tr>
-        <td class="main ${getSelect[0].value}">${getSelect[0].value}</td>
-        <td class="sub ${getSelect[1].value}">${getSelect[1].value}</td>
-        <td class="sub ${getSelect[2].value}">${getSelect[2].value}</td>
-        <td><input type="button" value="削除" onclick="this.parentNode.parentNode.remove();calc();"></td>
+        <td class="main ${getSelect[0].value}">
+            <div>
+                <select onchange="this.parentNode.parentNode.querySelector('span').innerText=this.value;this.parentNode.parentNode.className='main '+this.value;calc();">
+                    <option ${getSelect[0].value=='英気' ? 'selected' : ''}>英気</option>
+                    <option ${getSelect[0].value=='気力' ? 'selected' : ''}>気力</option>
+                    <option ${getSelect[0].value=='猛撃' ? 'selected' : ''}>猛撃</option>
+                    <option ${getSelect[0].value=='勇猛' ? 'selected' : ''}>勇猛</option>
+                    <option ${getSelect[0].value=='堅守' ? 'selected' : ''}>堅守</option>
+                    <option ${getSelect[0].value=='守備' ? 'selected' : ''}>守備</option>
+                    <option ${getSelect[0].value=='俊敏' ? 'selected' : ''}>俊敏</option>
+                    <option ${getSelect[0].value=='精密' ? 'selected' : ''}>精密</option>
+                    <option ${getSelect[0].value=='拒絶' ? 'selected' : ''}>拒絶</option>
+                </select>
+                <span>${getSelect[0].value}</span>
+            </div>
+        </td>
+        <td class="sub ${getSelect[1].value}">
+            <div>
+                <select onchange="this.parentNode.parentNode.querySelector('span').innerText=this.value;this.parentNode.parentNode.className='sub '+this.value;calc();">
+                    <option></option>
+                    <option ${getSelect[1].value=='英気' ? 'selected' : ''}>英気</option>
+                    <option ${getSelect[1].value=='気力' ? 'selected' : ''}>気力</option>
+                    <option ${getSelect[1].value=='猛撃' ? 'selected' : ''}>猛撃</option>
+                    <option ${getSelect[1].value=='勇猛' ? 'selected' : ''}>勇猛</option>
+                    <option ${getSelect[1].value=='堅守' ? 'selected' : ''}>堅守</option>
+                    <option ${getSelect[1].value=='守備' ? 'selected' : ''}>守備</option>
+                    <option ${getSelect[1].value=='俊敏' ? 'selected' : ''}>俊敏</option>
+                    <option ${getSelect[1].value=='精密' ? 'selected' : ''}>精密</option>
+                    <option ${getSelect[1].value=='拒絶' ? 'selected' : ''}>拒絶</option>
+                    <option ${getSelect[1].value=='属性' ? 'selected' : ''}>属性</option>
+                </select>
+                <span>${getSelect[1].value}</span>
+            </div>
+        </td>
+        <td class="sub ${getSelect[2].value}">
+            <div>
+                <select onchange="this.parentNode.parentNode.querySelector('span').innerText=this.value;this.parentNode.parentNode.className='sub '+this.value;calc();">
+                    <option></option>
+                    <option ${getSelect[2].value=='英気' ? 'selected' : ''}>英気</option>
+                    <option ${getSelect[2].value=='気力' ? 'selected' : ''}>気力</option>
+                    <option ${getSelect[2].value=='猛撃' ? 'selected' : ''}>猛撃</option>
+                    <option ${getSelect[2].value=='勇猛' ? 'selected' : ''}>勇猛</option>
+                    <option ${getSelect[2].value=='堅守' ? 'selected' : ''}>堅守</option>
+                    <option ${getSelect[2].value=='守備' ? 'selected' : ''}>守備</option>
+                    <option ${getSelect[2].value=='俊敏' ? 'selected' : ''}>俊敏</option>
+                    <option ${getSelect[2].value=='精密' ? 'selected' : ''}>精密</option>
+                    <option ${getSelect[2].value=='拒絶' ? 'selected' : ''}>拒絶</option>
+                    <option ${getSelect[2].value=='属性' ? 'selected' : ''}>属性</option>
+                </select>
+                <span>${getSelect[2].value}</span>
+            </div>
+        </td>
+        <td><button onclick="this.parentNode.parentNode.parentNode.remove();calc();">削除</button></td>
     </tr>
     `;
     tableGenerate.insertAdjacentHTML('beforeend', trGenerate); 
