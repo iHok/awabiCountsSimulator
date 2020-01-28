@@ -23,7 +23,7 @@ ul{
 #generateResult tr:hover{
   opacity: 0.85;
 }
-#generateResult td:hover{
+#generateResult td:not(.generateCheck):hover{
     opacity: 0.7;
 }
 #generateResult button{
@@ -31,7 +31,6 @@ ul{
 }
 #generateHead th,#generateResult td{
     min-width: 5.8rem;
-    max-width: 5.8rem;
     color: #000;
     font-size: 1rem;
     font-weight: bold;
@@ -67,6 +66,11 @@ h2{
 
 .generateResultGuide{
     position: absolute;
+}
+
+#generateResult td.generateCheck{
+    text-align: left;
+    opacity: 1;
 }
 
 .英気{background-color: #198211;}

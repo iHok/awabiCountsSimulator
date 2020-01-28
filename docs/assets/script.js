@@ -23,13 +23,14 @@ let calc = () =>{
     setValue('#合計', goukei);
     setValue('#回数', Number(kaisu) + Number(houjuGenerate.length));
     setValue('#合計残数', 0 <= goukeiZansu ? goukeiZansu : '-');
+    generateCheck();
 }
 
 let generate = () => {
     let tableGenerate = document.querySelector("#generateResult"); 
     let getSelect = document.querySelectorAll(".select select");
     const trGenerate = `
-    <tr>
+    <tr class="trGenerate">
         <td class="main ${getSelect[0].value}">
             <div>
                 <select onchange="this.parentNode.parentNode.querySelector('span').innerText=this.value;this.parentNode.parentNode.className='main '+this.value;calc();">
@@ -83,12 +84,37 @@ let generate = () => {
             </div>
         </td>
         <td><button onclick="this.parentNode.parentNode.parentNode.remove();calc();">削除</button></td>
+        <td class="generateCheck"><label><input type="checkbox" onclick="generateCheck()"></label></td>
     </tr>
     `;
     tableGenerate.insertAdjacentHTML('beforeend', trGenerate); 
     getSelect[0].selectedIndex=0;
     getSelect[1].selectedIndex=0;
     getSelect[2].selectedIndex=0;
+}
+
+let generateCheck = () =>{
+    let getInputHouju = document.querySelectorAll("#getInput input:not([name='回数']):not([name='合計'])");
+    let houjuGenerate = document.querySelectorAll("#generateResult tr");
+    let usedKakera = {};
+
+    getInputHouju.forEach((e) => {usedKakera[e.name] = e.value;})
+    houjuGenerate.forEach((e)=>{
+        if(e.querySelector(".generateCheck input").checked){
+            let kakera = e.querySelectorAll(".trGenerate span");
+            let usedKakeraHTML =`
+            <input type='checkbox' onclick='generateCheck()' checked>
+            ${kakera[0].textContent}${usedKakera[kakera[0].textContent] = usedKakera[kakera[0].textContent] - 50}`
+            kakera[1].textContent=="　" ? "" : usedKakeraHTML=usedKakeraHTML+`　${kakera[1].textContent}${usedKakera[kakera[1].textContent] = usedKakera[kakera[1].textContent] - 25}`;
+            kakera[2].textContent=="　" ? "" : usedKakeraHTML=usedKakeraHTML+`　${kakera[2].textContent}${usedKakera[kakera[2].textContent] = usedKakera[kakera[2].textContent] - 25}`;
+            e.querySelector(".generateCheck label").textContent = '';
+            e.querySelector(".generateCheck label").insertAdjacentHTML('beforeend', usedKakeraHTML);
+        } else {
+            e.querySelector(".generateCheck label").textContent = '';
+            e.querySelector(".generateCheck label").insertAdjacentHTML('beforeend', "<input type='checkbox' onclick='generateCheck()'>");
+        }
+
+    })
 }
 
 calc();
