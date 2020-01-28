@@ -49,7 +49,7 @@ let generate = () => {
         <td class="sub ${getSelect[1].value}">
             <div>
                 <select onchange="this.parentNode.parentNode.querySelector('span').innerText=this.value;this.parentNode.parentNode.className='sub '+this.value;calc();">
-                    <option></option>
+                    <option>　</option>
                     <option ${getSelect[1].value=='英気' ? 'selected' : ''}>英気</option>
                     <option ${getSelect[1].value=='気力' ? 'selected' : ''}>気力</option>
                     <option ${getSelect[1].value=='猛撃' ? 'selected' : ''}>猛撃</option>
@@ -67,7 +67,7 @@ let generate = () => {
         <td class="sub ${getSelect[2].value}">
             <div>
                 <select onchange="this.parentNode.parentNode.querySelector('span').innerText=this.value;this.parentNode.parentNode.className='sub '+this.value;calc();">
-                    <option></option>
+                    <option>　</option>
                     <option ${getSelect[2].value=='英気' ? 'selected' : ''}>英気</option>
                     <option ${getSelect[2].value=='気力' ? 'selected' : ''}>気力</option>
                     <option ${getSelect[2].value=='猛撃' ? 'selected' : ''}>猛撃</option>
