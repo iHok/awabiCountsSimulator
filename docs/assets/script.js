@@ -16,11 +16,14 @@ let calc = () =>{
     getInputHouju.forEach((e) => {
         goukei = Number(goukei) + Number(e.value);
         mainGenerate = document.querySelectorAll(".main." + e.name).length;
-        subGenerate = document.querySelectorAll(".sub." + e.name).length / 2;
         if(e.name != "属性"){
+            subGenerate = document.querySelectorAll(".sub." + e.name).length / 2;
             goukeiZansu = Number(goukeiZansu) + Math.floor(Number(dividedBy50(round25(e.value))-mainGenerate-subGenerate))
+            setValue( '#'+e.name , Number(dividedBy50(round25(e.value)) - Number(mainGenerate) - Number(subGenerate)))
+        } else {
+            subGenerate = document.querySelectorAll(".sub." + e.name).length;
+            setValue( '#'+e.name , ((round25(e.value)/25) - Number(mainGenerate) - Number(subGenerate)))
         }
-        setValue( '#'+e.name , Number(dividedBy50(round25(e.value)) - Number(mainGenerate) - Number(subGenerate)))
     })
     setValue('#合計', goukei);
     setValue('#回数', Number(kaisu) + Number(houjuGenerate.length));
